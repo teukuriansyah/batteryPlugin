@@ -14,7 +14,7 @@ public class batteryPlugin extends Plugin {
     @PluginMethod
     public void getBatteryLevel(PluginCall call) {
       JSObject ret = new JSObject();
-      ret.put("level",100)
+      ret.put("level",100);
       call.resolve(ret);
     }
   
