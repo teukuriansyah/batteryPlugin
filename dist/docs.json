@@ -34,6 +34,26 @@
         "docs": "",
         "complexTypes": [],
         "slug": "getchargetype"
+      },
+      {
+        "name": "getBatteryTemperature",
+        "signature": "() => Promise<{ batteryTemperature: number; }>",
+        "parameters": [],
+        "returns": "Promise<{ batteryTemperature: number; }>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [],
+        "slug": "getbatterytemperature"
+      },
+      {
+        "name": "getBatteryVoltage",
+        "signature": "() => Promise<{ batteryVoltage: number; }>",
+        "parameters": [],
+        "returns": "Promise<{ batteryVoltage: number; }>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [],
+        "slug": "getbatteryvoltage"
       }
     ],
     "properties": []

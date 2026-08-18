@@ -12,4 +12,10 @@ export class batteryWeb extends WebPlugin implements batteryPlugin {
   async getChargeType():Promise<{ chargeType:string}> {
     throw new Error("This plugin not compatible for web")
   }
+  async getBatteryTemperature():Promise<{ chargeType:string}> {
+    throw new Error("This plugin not compatible for web")
+  }
+  async getBatteryVoltage():Promise<{ batteryVoltage:string}> {
+    throw new Error("This plugin not compatible for web")
+  }
 }

@@ -60,5 +60,35 @@ boolean isCharging = status == BatteryManager.BATTERY_STATUS_CHARGING ||
       ret.put("chargeType",usbCharge ? "usb" : acCharge ? "ac" : "none");
       call.resolve(ret);
     }
+
+    // Battery Temperature
+    @PluginMethod
+    public void getBatteryTemperature(PluginCall call) {
+       Context context = getContext();
+       IntentFilter ifilter = new IntentFilter(Intent.ACTION_BATTERY_CHANGED);
+Intent batteryStatus = context.registerReceiver(null, ifilter);
+      
+      int rawTemp = batteryStatus.getIntExtra(BatteryManager.EXTRA_TEMPERATURE, 0);
+      float celsius = (float) rawTemp / 10.0f;
+    
+      JSObject ret = new JSObject();
+      ret.put("batteryTemperature",celsius);
+      call.resolve(ret);
+    }
+  
+    // Battery Voltage
+    @PluginMethod
+    public void getBatteryVoltage(PluginCall call) {
+       Context context = getContext();
+       IntentFilter ifilter = new IntentFilter(Intent.ACTION_BATTERY_CHANGED);
+Intent batteryStatus = context.registerReceiver(null, ifilter);
+      
+      int rawVoltage = batteryStatus.getIntExtra(BatteryManager.EXTRA_VOLTAGE, -1);
+      float voltageInVolts = rawVoltage > 1000 ? rawVoltage / 1000f : rawVoltage;
+    
+      JSObject ret = new JSObject();
+      ret.put("batteryVoltage",voltageInVolts);
+      call.resolve(ret);
+    }
   
 }

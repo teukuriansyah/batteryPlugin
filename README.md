@@ -29,6 +29,8 @@ npx cap sync
 * [`getBatteryLevel()`](#getbatterylevel)
 * [`isBatteryCharging()`](#isbatterycharging)
 * [`getChargeType()`](#getchargetype)
+* [`getBatteryTemperature()`](#getbatterytemperature)
+* [`getBatteryVoltage()`](#getbatteryvoltage)
 
 </docgen-index>
 
@@ -64,6 +66,28 @@ getChargeType() => Promise<{ chargeType: string; }>
 ```
 
 **Returns:** <code>Promise&lt;{ chargeType: string; }&gt;</code>
+
+--------------------
+
+
+### getBatteryTemperature()
+
+```typescript
+getBatteryTemperature() => Promise<{ batteryTemperature: number; }>
+```
+
+**Returns:** <code>Promise&lt;{ batteryTemperature: number; }&gt;</code>
+
+--------------------
+
+
+### getBatteryVoltage()
+
+```typescript
+getBatteryVoltage() => Promise<{ batteryVoltage: number; }>
+```
+
+**Returns:** <code>Promise&lt;{ batteryVoltage: number; }&gt;</code>
 
 --------------------
 
