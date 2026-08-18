@@ -26,24 +26,20 @@ npx cap sync
 
 <docgen-index>
 
-* [`echo(...)`](#echo)
+* [`getBatteryLevel()`](#getbatterylevel)
 
 </docgen-index>
 
 <docgen-api>
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
-### echo(...)
+### getBatteryLevel()
 
 ```typescript
-echo(options: { value: string; }) => Promise<{ value: string; }>
+getBatteryLevel() => Promise<{ level: number; }>
 ```
 
-| Param         | Type                            |
-| ------------- | ------------------------------- |
-| **`options`** | <code>{ value: string; }</code> |
-
-**Returns:** <code>Promise&lt;{ value: string; }&gt;</code>
+**Returns:** <code>Promise&lt;{ level: number; }&gt;</code>
 
 --------------------
 

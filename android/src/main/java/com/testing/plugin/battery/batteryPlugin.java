@@ -12,11 +12,10 @@ public class batteryPlugin extends Plugin {
     private battery implementation = new battery();
 
     @PluginMethod
-    public void echo(PluginCall call) {
-        String value = call.getString("value");
-
-        JSObject ret = new JSObject();
-        ret.put("value", implementation.echo(value));
-        call.resolve(ret);
+    public void getBatteryLevel(PluginCall call) {
+      JSObject ret = new JSObject();
+      ret.put("level",100)
+      call.resolve(ret);
     }
+  
 }

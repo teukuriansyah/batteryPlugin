@@ -1,0 +1,25 @@
+{
+  "api": {
+    "name": "batteryPlugin",
+    "slug": "batteryplugin",
+    "docs": "",
+    "tags": [],
+    "methods": [
+      {
+        "name": "getBatteryLevel",
+        "signature": "() => Promise<{ level: number; }>",
+        "parameters": [],
+        "returns": "Promise<{ level: number; }>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [],
+        "slug": "getbatterylevel"
+      }
+    ],
+    "properties": []
+  },
+  "interfaces": [],
+  "enums": [],
+  "typeAliases": [],
+  "pluginConfigs": []
+}

@@ -3,8 +3,7 @@ import { WebPlugin } from '@capacitor/core';
 import type { batteryPlugin } from './definitions';
 
 export class batteryWeb extends WebPlugin implements batteryPlugin {
-  async echo(options: { value: string }): Promise<{ value: string }> {
-    console.log('ECHO', options);
-    return options;
+  async getBatteryLevel():Promise<{ level:number}> {
+    throw new Error("This plugin not compatible for web")
   }
 }
