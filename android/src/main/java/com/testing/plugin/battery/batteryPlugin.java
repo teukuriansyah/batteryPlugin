@@ -12,7 +12,8 @@ import com.getcapacitor.annotation.CapacitorPlugin;
 
 @CapacitorPlugin(name = "battery")
 public class batteryPlugin extends Plugin {
-  
+
+  // Battery Level
     @PluginMethod
     public void getBatteryLevel(PluginCall call) {
        Context context = getContext();
@@ -25,6 +26,22 @@ public class batteryPlugin extends Plugin {
       
       JSObject ret = new JSObject();
       ret.put("level",batteryPct);
+      call.resolve(ret);
+    }
+
+  // Is Charging
+    @PluginMethod
+    public void isBatteryCharging(PluginCall call) {
+       Context context = getContext();
+    IntentFilter ifilter = new IntentFilter(Intent.ACTION_BATTERY_CHANGED);
+       Intent batteryStatus = context.registerReceiver(null, ifilter);
+      
+       int status = batteryStatus.getIntExtra(BatteryManager.EXTRA_STATUS, -1);
+boolean isCharging = status == BatteryManager.BATTERY_STATUS_CHARGING ||
+                     status == BatteryManager.BATTERY_STATUS_FULL;
+      
+      JSObject ret = new JSObject();
+      ret.put("isCharging",isCharging);
       call.resolve(ret);
     }
   
