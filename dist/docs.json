@@ -54,6 +54,26 @@
         "docs": "",
         "complexTypes": [],
         "slug": "getbatteryvoltage"
+      },
+      {
+        "name": "getBatteryCurrent",
+        "signature": "() => Promise<{ batteryCurrent: number; }>",
+        "parameters": [],
+        "returns": "Promise<{ batteryCurrent: number; }>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [],
+        "slug": "getbatterycurrent"
+      },
+      {
+        "name": "getBatteryHealth",
+        "signature": "() => Promise<{ batteryHealth: string; }>",
+        "parameters": [],
+        "returns": "Promise<{ batteryHealth: string; }>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [],
+        "slug": "getbatteryhealth"
       }
     ],
     "properties": []

@@ -14,4 +14,10 @@ export interface batteryPlugin {
     getBatteryVoltage(): Promise<{
         batteryVoltage: number;
     }>;
+    getBatteryCurrent(): Promise<{
+        batteryCurrent: number;
+    }>;
+    getBatteryHealth(): Promise<{
+        batteryHealth: string;
+    }>;
 }

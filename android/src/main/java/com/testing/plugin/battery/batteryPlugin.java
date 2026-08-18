@@ -91,4 +91,41 @@ Intent batteryStatus = context.registerReceiver(null, ifilter);
       call.resolve(ret);
     }
   
+    // Battery Current
+    @PluginMethod
+    public void getBatteryCurrent(PluginCall call) {
+       Context context = getContext();
+       BatteryManager batteryManager = (BatteryManager) context.getSystemService(Context.BATTERY_SERVICE);
+
+      long currentNow = batteryManager.getLongProperty(BatteryManager.BATTERY_PROPERTY_CURRENT_NOW);
+    
+      JSObject ret = new JSObject();
+      ret.put("batteryCurrent",currentNow);
+      call.resolve(ret);
+    }
+  
+    // Battery Health
+    @PluginMethod
+    public void getBatteryHealth(PluginCall call) {
+       Context context = getContext();
+       IntentFilter ifilter = new IntentFilter(Intent.ACTION_BATTERY_CHANGED);
+      Intent batteryStatus = context.registerReceiver(null, ifilter);
+
+      int health = batteryStatus.getIntExtra(BatteryManager.EXTRA_HEALTH, -1);
+
+      JSObject ret = new JSObject();
+      if(health == 1) {
+        ret.put("batteryHealth","Unknown");
+      } else if(health == 2) {
+        ret.put("batteryHealth","Good");
+      } else if(health == 3) {
+        ret.put("batteryHealth","Overheat");
+      } else if(health == 4) {
+        ret.put("batteryHealth","Dead");
+      } else if(health == 5) {
+        ret.put("batteryHealth","Over voltage");
+      }
+      call.resolve(ret);
+    }
+  
 }

@@ -31,6 +31,8 @@ npx cap sync
 * [`getChargeType()`](#getchargetype)
 * [`getBatteryTemperature()`](#getbatterytemperature)
 * [`getBatteryVoltage()`](#getbatteryvoltage)
+* [`getBatteryCurrent()`](#getbatterycurrent)
+* [`getBatteryHealth()`](#getbatteryhealth)
 
 </docgen-index>
 
@@ -88,6 +90,28 @@ getBatteryVoltage() => Promise<{ batteryVoltage: number; }>
 ```
 
 **Returns:** <code>Promise&lt;{ batteryVoltage: number; }&gt;</code>
+
+--------------------
+
+
+### getBatteryCurrent()
+
+```typescript
+getBatteryCurrent() => Promise<{ batteryCurrent: number; }>
+```
+
+**Returns:** <code>Promise&lt;{ batteryCurrent: number; }&gt;</code>
+
+--------------------
+
+
+### getBatteryHealth()
+
+```typescript
+getBatteryHealth() => Promise<{ batteryHealth: string; }>
+```
+
+**Returns:** <code>Promise&lt;{ batteryHealth: string; }&gt;</code>
 
 --------------------
 
