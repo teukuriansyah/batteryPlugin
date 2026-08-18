@@ -24,6 +24,16 @@
         "docs": "",
         "complexTypes": [],
         "slug": "isbatterycharging"
+      },
+      {
+        "name": "getChargeType",
+        "signature": "() => Promise<{ chargeType: string; }>",
+        "parameters": [],
+        "returns": "Promise<{ chargeType: string; }>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [],
+        "slug": "getchargetype"
       }
     ],
     "properties": []

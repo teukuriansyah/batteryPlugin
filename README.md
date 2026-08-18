@@ -28,6 +28,7 @@ npx cap sync
 
 * [`getBatteryLevel()`](#getbatterylevel)
 * [`isBatteryCharging()`](#isbatterycharging)
+* [`getChargeType()`](#getchargetype)
 
 </docgen-index>
 
@@ -52,6 +53,17 @@ isBatteryCharging() => Promise<{ isCharging: boolean; }>
 ```
 
 **Returns:** <code>Promise&lt;{ isCharging: boolean; }&gt;</code>
+
+--------------------
+
+
+### getChargeType()
+
+```typescript
+getChargeType() => Promise<{ chargeType: string; }>
+```
+
+**Returns:** <code>Promise&lt;{ chargeType: string; }&gt;</code>
 
 --------------------
 

@@ -44,5 +44,20 @@ boolean isCharging = status == BatteryManager.BATTERY_STATUS_CHARGING ||
       ret.put("isCharging",isCharging);
       call.resolve(ret);
     }
+
+  // Charge type
+    @PluginMethod
+    public void getChargeType(PluginCall call) {
+       Context context = getContext();
+    IntentFilter ifilter = new IntentFilter(Intent.ACTION_BATTERY_CHANGED);
+       Intent batteryStatus = context.registerReceiver(null, ifilter);
+      
+       int chargePlug = batteryStatus.getIntExtra(BatteryManager.EXTRA_PLUGGED, -1);
+       boolean usbCharge = chargePlug == BatteryManager.BATTERY_PLUGGED_USB;
+      
+      JSObject ret = new JSObject();
+      ret.put("chargeType",usbCharge ? "usb" : "non usb");
+      call.resolve(ret);
+    }
   
 }

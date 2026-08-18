@@ -1,4 +1,5 @@
 export interface batteryPlugin {
   getBatteryLevel():Promise<{ level:number }>;
   isBatteryCharging():Promise<{ isCharging:boolean }>;
+  getChargeType():Promise<{ chargeType:string }>;
 }

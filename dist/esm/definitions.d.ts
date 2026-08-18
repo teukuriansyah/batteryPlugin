@@ -5,4 +5,7 @@ export interface batteryPlugin {
     isBatteryCharging(): Promise<{
         isCharging: boolean;
     }>;
+    getChargeType(): Promise<{
+        chargeType: string;
+    }>;
 }
