@@ -56,7 +56,7 @@ boolean isCharging = status == BatteryManager.BATTERY_STATUS_CHARGING ||
        boolean usbCharge = chargePlug == BatteryManager.BATTERY_PLUGGED_USB;
       
       JSObject ret = new JSObject();
-      ret.put("chargeType",usbCharge ? "usb" : "non usb");
+      ret.put("chargeType",usbCharge ? "usb" : "ac");
       call.resolve(ret);
     }
   
